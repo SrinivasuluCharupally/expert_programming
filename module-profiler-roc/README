@@ -1,0 +1,13 @@
+#g++ -shared -fPIC max_library.cpp -o libmaxlibrary.so
+
+#g++ -shared -fPIC max_interceptor.cpp -o libmax_interceptor.so -ldl
+// here -ldl is most important otherwise dlopen() failes
+
+#g++ max_tool.cpp -o max_tool
+
+#g++ test_tool.cpp -o test_tool -L . -lmax_library
+
+#LD_PRELOAD=$PWD/libmax_interceptor.so ./test_tool
+
+//To debug the issues use LD_DEBUG=all
+#LD_DEBUG=all LD_PRELOAD=$PWD/libmax_interceptor.so ./test_tool

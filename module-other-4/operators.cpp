@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+#define PRINT(STR, VAR) \ 
+ cout << STR " = " << VAR << endl 
+
+int main() {
+ int i,j,k;
+ cout << "Enter an integer: ";
+ cin >> i;
+ cout << "Enter another integer: ";
+ cin >> j;
+ cout << "i > j is " << (i > j) << endl;
+ cout << "i < j is " << (i < j) << endl;
+ cout << "i >= j is " << (i >= j) << endl;
+ cout << "i <= j is " << (i <= j) << endl;
+ cout << "i == j is " << (i == j) << endl;
+ cout << "i != j is " << (i != j) << endl;
+ cout << "i && j is " << (i && j) << endl;
+ cout << "i || j is " << (i || j) << endl; 
+ cout << " (i < 10) && (j < 10) is "
+ << ((i < 10) && (j < 10)) << endl;
+ //int i, j, k;
+ float u, v, w; // Applies to doubles, too
+ cout << "enter an integer: ";
+ cin >> j;
+ cout << "enter another integer: ";
+ cin >> k;
+ PRINT("j",j); PRINT("k",k);
+ i = j + k; PRINT("j + k",i);
+ i = j - k; PRINT("j - k",i);
+ i = k / j; PRINT("k / j",i);
+ i = k * j; PRINT("k * j",i); 
+//170 Thinking in C++ www.BruceEckel.com
+ i = k % j; PRINT("k % j",i);
+ // The following only works with integers:
+ j %= k; PRINT("j %= k", j);
+ cout << "Enter a floating-point number: ";
+ cin >> v;
+ cout << "Enter another floating-point number:";
+ cin >> w;
+ PRINT("v",v); PRINT("w",w);
+ u = v + w; PRINT("v + w", u);
+ u = v - w; PRINT("v - w", u);
+ u = v * w; PRINT("v * w", u);
+ u = v / w; PRINT("v / w", u);
+ // The following works for ints, chars,
+ // and doubles too:
+ PRINT("u", u); PRINT("v", v);
+ u += v; PRINT("u += v", u);
+ u -= v; PRINT("u -= v", u);
+ u *= v; PRINT("u *= v", u);
+ u /= v; PRINT("u /= v", u); 
+} ///:~ 

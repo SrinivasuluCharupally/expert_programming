@@ -1,0 +1,1 @@
+source : http://man7.org/linux/man-pages/man3/dl_iterate_phdr.3.html
