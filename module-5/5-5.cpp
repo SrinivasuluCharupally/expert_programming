@@ -1,0 +1,3 @@
+
+what exactly (n & (n-1) ==0) ?
+Ans: in this case n has to be 2^x to become the condition true, like 4 8 , 16, ....

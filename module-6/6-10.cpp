@@ -1,0 +1,26 @@
+
+
+Poison: You have 1000 bottles of soda, and exactly one is poisoned. You have 10 test strips which
+can be used to detect poison. A single drop of poison will turn the test strip positive permanently.
+You can put any number of drops on a test strip at once and you can reuse a test strip as many times
+as you'd like (as long as the results are negative). However, you can only run tests once per day and
+it takes seven days to return a result. How would you figure out the poisoned bottle in as few days
+as possible?
+Follow up: Write code to simulate your approach.
+
+
+Ans:
+
+Optimal Approach (7 days)
+
+
+We can actually optimize this slightly more, to return a result in just seven days. This is of course the
+minimum number of days possible.
+Notice what each test strip really means. It's a binary indicator for poisoned or unpoisoned. Is it possible to
+map 1000 keys to 10 binary values such that each key is mapped to a unique configuration of values? Yes,
+of course. This is what a binary number is.
+We can take each bottle number and look at its binary representation. If there's a 1 in the ith digit, then
+we will add a drop of this bottle's contents to test strip i. Observe that 210 is 1024, so 10 test strips will be
+enough to handle up to 1024 bottles.
+We wait seven days, and then read the results. If test strip i is positive, then set bit i of the result value.
+Reading all the test strips will give us the ID of the poisoned bottle.
