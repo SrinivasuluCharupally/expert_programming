@@ -7,7 +7,8 @@ using namespace std;
 int countingzeros(int n) {
 	int count = 0;
 	for( int i = 5; n/i > 0; i *= 5) 
-		count += n/i;
+		if(n%i ==0) count += 1;
+			
 
 	return count;
 }
