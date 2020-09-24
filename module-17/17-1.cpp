@@ -18,11 +18,11 @@ int Addition(int one, int second) {
 	}
 */
 
-	int resOR = one ^ second;
-	int resAND = one & second;
-	resAND = resAND<<1;
-	int result = resOR | resAND;
-	return result;
+	int resXOR = one ^ second; // 00
+	int resAND = one & second;// 10
+	resAND = resAND<<1; // 100
+	int result = resXOR | resAND; // 100
+	return result; // 4
 }
 
 int main() {
