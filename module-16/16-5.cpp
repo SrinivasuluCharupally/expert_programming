@@ -6,7 +6,7 @@ using namespace std;
 
 int countingzeros(int n) {
 	int count = 0;
-	for( int i = 5; n/i > 0; i *= 5) 
+	for( int i = 5; n/i > 0; i += 5) 
 		if(n%i ==0) count += 1;
 			
 
