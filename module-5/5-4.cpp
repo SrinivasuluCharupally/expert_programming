@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 	// your code goes here
-int n =13948, getbit = 0, count = 0;
+int n =5, getbit = 0, count = 0;
 
 while(n != 0) {
     if(n & (1 << getbit)) {
@@ -17,11 +17,12 @@ while(n != 0) {
 }
 cout << "no of 1's = " << count << endl;
 
-int small = (1 << count +1) -1;
+int small = (1 << count) -1;
 cout << " smallest number haveing same 1's = " << small << endl;
 int big = (-1 << (getbit - count)) & ((1 << getbit)-1) ;
+// simple way could be "small << (getbits - count)" 
 int x =  ((1 << (getbit+1))-1);
-cout << " biggets number having same 1's = " << big << "  "  << x << endl;
+cout << " biggets number having same 1's = " << big << endl;
 	return 0;
 }
 
